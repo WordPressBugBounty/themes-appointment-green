@@ -4,7 +4,7 @@ Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Requires at least: 4.5
 Tested up to: 6.4
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -48,6 +48,8 @@ For any ideas, support and feedback you can access the theme forum.
 
 == Changelog ==
 
+= 1.3.8 =
+1. Added toggle search feature.
 = 1.3.7 =
 1. Added separator in sidebar & footer widget area.
 = 1.3.6 =

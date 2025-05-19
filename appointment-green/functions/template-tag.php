@@ -49,7 +49,8 @@ if(!function_exists( 'appointment_green_header_column_layout')) :
 	function appointment_green_header_column_layout(){
 
 	$appointment_green_options=appointment_theme_setup_data();
-	$header_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_green_options);?>
+	$header_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_green_options);
+    ?>
 
                 <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header index6">
@@ -126,9 +127,37 @@ if(!function_exists( 'appointment_green_header_column_layout')) :
                         'container' => '',
                         'menu_class' => 'nav navbar-nav navbar-left',
                         'fallback_cb' => 'appointment_fallback_page_menu',
+                        //'items_wrap'  => $appointment_green_search_icon,
                         'walker' => new appointment_nav_walker()
                     ));
-                    ?>
+                    
+                    if ($header_setting['appointment_search_enable'] == 0 || $header_setting['appointment_search_enable'] == '') 
+                    {
+                        echo '<ul class="nav navbar-nav navbar-right"><li> <div class="header-module"><div class="search-bar">
+                            <div class="search-box-outer">
+                              <div class="dropdown">
+                                <a href="#" title="'.esc_attr__('Search','appointment').'" class="menu-item search-icon dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                                 <i class="fa fa-search"></i>
+                                 <span class="sub-arrow"></span>
+                                </a>
+                                <ul class="dropdown-menu pull-right search-panel" role="group" aria-hidden="true" aria-expanded="false">
+                                  <li class="dropdown-item panel-outer">
+                                    <div class="form-container">
+                                        <form method="get" autocomplete="off" class="search-form" action="' . esc_url(home_url('/')) . '">
+                                            <label>
+                                              <input type="search" class="menu-item search-field" placeholder="'.esc_attr__('Search …','appointment').'" value="" name="s">
+                                            </label>
+                                            <input type="submit" class="menu-item search-submit header-toggle-search" value="'.esc_attr__('Search','appointment').'">
+                                        </form>                   
+                                    </div>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div></div></li></ul>';
+                        }
+                        ?>
+                   
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
@@ -202,11 +231,39 @@ if(!function_exists( 'appointment_green_header_default_layout')) :
                 </div>
 
                 <?php
+                if ($header_setting['appointment_search_enable'] == 0 || $header_setting['appointment_search_enable'] == '') {
+                $appointment_green_search_icon = '';
+                $appointment_green_search_icon.= '<div class="search-bar">
+                    <div class="search-box-outer">
+                      <div class="dropdown">
+                        <a href="#" title="'.esc_attr__('Search','appointment').'" class="menu-item search-icon dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                         <i class="fa fa-search"></i>
+                         <span class="sub-arrow"></span>
+                        </a>
+                        <ul class="dropdown-menu pull-right search-panel" role="group" aria-hidden="true" aria-expanded="false">
+                          <li class="dropdown-item panel-outer">
+                            <div class="form-container">
+                                <form method="get" autocomplete="off" class="search-form" action="' . esc_url(home_url('/')) . '">
+                                    <label>
+                                      <input type="search" class="menu-item search-field" placeholder="'.esc_attr__('Search …','appointment').'" value="" name="s">
+                                    </label>
+                                    <input type="submit" class="menu-item search-submit header-toggle-search" value="'.esc_attr__('Search','appointment').'">
+                                </form>                   
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>';
+                }
                 $facebook = $header_setting['social_media_facebook_link'];
                 $twitter = $header_setting['social_media_twitter_link'];
                 $linkdin = $header_setting['social_media_linkedin_link'];
 
                 $social = '<ul id="%1$s" class="%2$s">%3$s';
+                if ($header_setting['appointment_search_enable'] == 0 || $header_setting['appointment_search_enable'] == '') {
+                    $social.= '<li><div class="ap header-module">' . $appointment_green_search_icon . '</li>';
+                    }
                 if ($header_setting['header_social_media_enabled'] == 0) {
 
                     if($facebook !='' || $twitter!='' || $linkdin!=''){
