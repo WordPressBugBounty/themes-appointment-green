@@ -52,7 +52,7 @@ if(!function_exists( 'appointment_green_header_column_layout')) :
 	$header_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_green_options);
     ?>
 
-                <!-- Brand and toggle get grouped for better mobile display -->
+       <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header index6">
         	<div class="container">
 			<?php
@@ -110,14 +110,11 @@ if(!function_exists( 'appointment_green_header_column_layout')) :
                     	</div>
                 </div>
             </div>
-            <nav class="navbar navbar-default navbar6">
+            <nav class="navbar navbar-default navbar-expand-lg navbar6">
             	<div class="container">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only"><?php esc_html_e('Toggle navigation', 'appointment-green'); ?></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                       <span class="navbar-toggler-icon"></span>
+                     </button>
 
                	 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -133,7 +130,7 @@ if(!function_exists( 'appointment_green_header_column_layout')) :
                     
                     if ($header_setting['appointment_search_enable'] == 0 || $header_setting['appointment_search_enable'] == '') 
                     {
-                        echo '<ul class="nav navbar-nav navbar-right"><li> <div class="header-module"><div class="search-bar">
+                        echo '<ul class="nav navbar-nav ms-auto"><li> <div class="header-module"><div class="search-bar">
                             <div class="search-box-outer">
                               <div class="dropdown">
                                 <a href="#" title="'.esc_attr__('Search','appointment').'" class="menu-item search-icon dropdown-toggle" aria-haspopup="true" aria-expanded="false">
@@ -170,7 +167,7 @@ if(!function_exists( 'appointment_green_header_default_layout')) :
 	$appointment_green_options=appointment_theme_setup_data();
 	$header_setting = wp_parse_args(  get_option( 'appointment_options', array() ), $appointment_green_options);
 ?>
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default navbar-expand-lg">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -222,12 +219,9 @@ if(!function_exists( 'appointment_green_header_default_layout')) :
                                 <p class="site-description"><?php echo $appointment_description; ?></p>
                             <?php endif; ?>
                         </div>
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only"><?php esc_html_e('Toggle navigation', 'appointment-green'); ?></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                       <span class="navbar-toggler-icon"></span>
+                     </button>
                 </div>
 
                 <?php
@@ -302,7 +296,7 @@ if(!function_exists( 'appointment_green_header_default_layout')) :
                     wp_nav_menu(array(
                         'theme_location' => 'primary',
                         'container' => '',
-                        'menu_class' => 'nav navbar-nav navbar-right',
+                        'menu_class' => 'nav navbar-nav ms-auto',
                         'fallback_cb' => 'appointment_fallback_page_menu',
                         'items_wrap' => $social,
                         'walker' => new appointment_nav_walker()

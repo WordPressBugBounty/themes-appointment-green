@@ -3,8 +3,8 @@
 Contributors: priyanshumittal
 Tags: full-width-template, threaded-comments, two-columns, right-sidebar, sticky-post, custom-menu, translation-ready, blog, footer-widgets, featured-images
 Requires at least: 4.5
-Tested up to: 6.4
-Stable tag: 1.3.8
+Tested up to: 6.8
+Stable tag: 1.3.9
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,10 +35,10 @@ In WordPress 5.8, the default widget title is showing in the H2 tag if you want 
 
 == License ==
 
-Appointment WordPress Theme, Copyright (C) 2013-2024, priyanshumittal
+Appointment WordPress Theme, Copyright (C) 2013-2025, priyanshumittal
 Appointment WordPress Theme is distributed under the terms of the GNU GPL
 
-Appointment Green WordPress Theme is a child theme of Appointment Theme, Copyright (C) 2015-2024, priyanshumittal
+Appointment Green WordPress Theme is a child theme of Appointment Theme, Copyright (C) 2015-2025, priyanshumittal
 Appointment Green WordPress Theme is distributed under the terms of the GNU GPL
 
 === Support ===
@@ -48,6 +48,9 @@ For any ideas, support and feedback you can access the theme forum.
 
 == Changelog ==
 
+= 1.3.9 =
+1. Updated bootstrap 5.3.6.
+2. Added rtl language support.
 = 1.3.8 =
 1. Added toggle search feature.
 = 1.3.7 =
